@@ -142,10 +142,3 @@ Si des problèmes de cache persistent après une modification de `sw.js` :
 4. **Créer une Pull Request** 🎉
 
 ---
-
-## 📜 Licence
-Ce projet est sous licence **MIT**.
-
----
-
-🚀 **Profitez de votre PWA Todo List !**
