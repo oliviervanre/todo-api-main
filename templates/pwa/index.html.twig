@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Todo List</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 5px; cursor: pointer; }
+        #statusIndicator {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.status-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.online {
+    background-color: green;
+}
+
+.offline {
+    background-color: red;
+}
+
+    </style>    <script defer src="{{ asset('js/app.js') }}"></script>
+</head>
+<body>
+    <h1>Todo List PWA symf</h1>
+    <div id="status">
+        <span id="statusCircle" class="offline"></span>
+        <span id="statusText">Hors ligne</span>
+    </div>
+    <input type="text" id="task" placeholder="Ajouter une tâche">
+    <button onclick="addTask()">Ajouter</button>
+    <ul id="taskList"></ul>
+
+    
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register("/sw.js")
+                .then(() => console.log("Service Worker enregistré depuis répertoire pwa !"))
+                .catch(err => console.error("Erreur Service Worker", err));
+        }
+    </script>
+</body>
+</html>
