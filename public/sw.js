@@ -5,7 +5,7 @@ self.addEventListener("install", event => {
                 "/",
                 "/pwa",
                 "/js/app.js",
-                "/manifest.json"
+                "manifest.json"
             ]);
         })
     );
